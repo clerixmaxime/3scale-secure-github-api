@@ -1,0 +1,101 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Github API",
+    "description": "A swagger for the Github API",
+    "contact": {
+      "name": "Nicolas Massé",
+      "url": "https://github.com/nmasse-itix/",
+      "email": "nmasse@redhat.com"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "https://www.apache.org/licenses/LICENSE-2.0"
+    },
+    "version": "1.0.0"
+  },
+  "host": "api-2445582632153.staging.gw.apicast.io",
+  "schemes": [
+    "https"
+  ],
+  "basePath": "/",
+  "paths": {
+    "/": {
+      "get": {
+        "summary": "Get API Metadata",
+        "description": "Retrieve the API metadata.",
+        "responses": {
+          "200": {
+            "description": "The API Metadata"
+          }
+        },
+        "parameters": [
+          {
+            "name": "user-key",
+            "in": "header",
+            "description": "3scale API Key",
+            "required": true,
+            "type": "string",
+            "x-data-threescale-name": "user_keys"
+          }
+        ]
+      }
+    },
+    "/users/{userid}": {
+      "get": {
+        "summary": "Get the user details",
+        "description": "Retrieve the details about this specific user.",
+        "responses": {
+          "200": {
+            "description": "A user structure."
+          }
+        },
+        "parameters": [
+          {
+            "name": "userid",
+            "in": "path",
+            "description": "The GitHub userid.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "user-key",
+            "in": "header",
+            "description": "3scale API Key",
+            "required": true,
+            "type": "string",
+            "x-data-threescale-name": "user_keys"
+          }
+        ]
+      }
+    },
+    "/users/{userid}/repos": {
+      "get": {
+        "summary": "Get the user repositories",
+        "description": "Retrieve the repositories of this specific user.",
+        "responses": {
+          "200": {
+            "description": "The user repositories."
+          }
+        },
+        "parameters": [
+          {
+            "name": "userid",
+            "in": "path",
+            "description": "The GitHub userid.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "user-key",
+            "in": "header",
+            "description": "3scale API Key",
+            "required": true,
+            "type": "string",
+            "x-data-threescale-name": "user_keys"
+          }
+        ]
+      }
+    }
+  }
+}
