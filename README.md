@@ -42,16 +42,21 @@ curl "https://api-2445582632153.staging.gw.apicast.io:443/" -H 'user_key: c87ffb
 	2. System Name : get_user_repos
 
 ### Add the mapping rules
+
+![Mapping rules](https://raw.githubusercontent.com/clerixmaxime/3scale-secure-github-api/master/images/mapping_rules.png)
+
 1. Realize some hits on each endpoints
 2. Go to Analytics -> Usage
+
+![Analytics](https://raw.githubusercontent.com/clerixmaxime/3scale-secure-github-api/master/images/analytics.png)
 
 ## ActiveDocs
 1. Go to ActiveDocs -> Create your first spec
 	1. Name : Github
 	2. System name : github
 	3. Tick the box `Publish?`
-	4. Import JSON API spec from https://xch.app.itix.fr/3scale-training/github.json
-		1. Remember to change the gateway hostname
+	4. Import JSON API spec from https://raw.githubusercontent.com/clerixmaxime/3scale-secure-github-api/master/github-swagger.json
+		1. Remember to change the gateway hostname if needed
 	5. Go to the developer portal and log in as a user from the Developer Account
 	6. Try the API through ActiveDocs
 
